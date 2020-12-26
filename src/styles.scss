@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "~angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss";
+@import "~angular-bootstrap-md/assets/scss/mdb.scss";
+// regular style toast
+@import '~ngx-toastr/toastr';
+
+ul.stepper li a .circle{
+    line-height: 1.9rem;
+}
+.filepond--drop-label label{
+    cursor:pointer;
+}
+
+.filepond--root{
+    margin-bottom: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}

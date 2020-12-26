@@ -1,0 +1,9 @@
+<div class="step-content grey lighten-3">
+    <file-pond class="pointer" #fileUpload [options]="pondOptions" (onaddfile)="pondHandleAddFile($event)">
+    </file-pond>
+</div>
+
+<button class="btn btn-primary mt-3 mx-1" (click)="upload()" [disabled]="isLoading || !file">
+    <i class="fa" [ngClass]="{'fa-spin fa-spinner': isLoading, 'fa-file-upload': !isLoading}"></i>
+    Upload
+</button>

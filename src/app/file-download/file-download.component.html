@@ -1,0 +1,8 @@
+<div class="step-content text-center grey lighten-3">
+    <h5>Make images load faster and save bandwidth</h5>
+    <button class="btn btn-primary mt-3 mx-1" (click)="download()" [disabled]="isLoading">
+        <i class="fa"
+            [ngClass]="{'fa-spin fa-spinner': isLoading, 'fa-file-download faa-float animated': !isLoading}"></i>
+        Download optimized images
+    </button>
+</div>
