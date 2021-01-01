@@ -4,12 +4,14 @@ const fastify = require('fastify')({ logger: true })
 const path = require('path');
 const fs = require('fs');
 
-fastify.register(require('fastify-static'), {
-  root: path.join(path.join(__dirname,'dist','ImageOptimizer'))
-})
 fastify.register(
   require('fastify-compress')
 )
+
+fastify.register(require('fastify-static'), {
+  root: path.join(path.join(__dirname,'dist','ImageOptimizer'))
+})
+
 // Declare a route
 fastify.get('/', async (request, reply) => {
    const stream = fs.createReadStream(path.join(__dirname,'dist','ImageOptimizer','index.html'))
