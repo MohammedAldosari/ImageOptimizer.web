@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: '/api',
+  apiURL: 'https://imageoptimizerapi.herokuapp.com',
 };
 
 /*

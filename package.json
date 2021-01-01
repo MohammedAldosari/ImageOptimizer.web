@@ -2,11 +2,14 @@
   "name": "image-optimizer",
   "version": "0.0.0",
   "scripts": {
-    "start": "ng serve --hmr",
+    "start": "node server.js",
+    "start:dev": "ng serve --hmr",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build  -prod",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +27,9 @@
     "angular-bootstrap-md": "^10.1.1",
     "animate.css": "^4.1.1",
     "chart.js": "^2.5.0",
+    "fastify": "^3.9.2",
+    "fastify-compress": "^3.4.1",
+    "fastify-static": "^3.3.0",
     "file-saver": "^2.0.5",
     "filepond": "^4.25.1",
     "filepond-plugin-file-validate-type": "^1.2.5",
@@ -36,6 +42,7 @@
     "ngx-toastr": "^13.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "typescript": "~4.0.2",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -46,6 +53,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.19.9",
     "codelyzer": "^6.0.0",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.1.0",
@@ -55,7 +63,10 @@
     "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
-    "tslint": "~6.1.0",
-    "typescript": "~4.0.2"
+    "tslint": "~6.1.0"
+  },
+  "engines": {
+    "node": "12.18.3",
+    "npm": "6.14.6"
   }
 }
