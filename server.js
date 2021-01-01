@@ -12,10 +12,8 @@ fastify.register(
 )
 // Declare a route
 fastify.get('/', async (request, reply) => {
-
    const stream = fs.createReadStream(path.join(__dirname,'dist','ImageOptimizer','index.html'))
-
-  reply.type('text/html').send(stream)
+   reply.type('text/html').send(stream)
 })
 
 // Run the server!
