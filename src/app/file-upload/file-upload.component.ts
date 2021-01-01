@@ -33,7 +33,6 @@ export class FileUploadComponent implements OnInit {
   ngOnInit(): void {}
 
   pondHandleAddFile(event: any) {
-    console.log('A file was added', event);
     this.file = event.file.file;
   }
   upload() {
