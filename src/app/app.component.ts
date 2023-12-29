@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as ace from 'ace-builds';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,11 +8,6 @@ import * as ace from 'ace-builds';
 export class AppComponent {
   title = 'ImageOptimizer';
   constructor() {
-    ace.config.set(
-      'basePath',
-      'https://unpkg.com/ace-builds@1.4.12/src-noconflict'
-    );
-
     const consoleStyle = [
       'color: #3C78DC',
       'text-shadow: 1px 1px #0043af',

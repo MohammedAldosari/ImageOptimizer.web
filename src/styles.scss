@@ -1,24 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "~@fortawesome/fontawesome-free/scss/solid.scss";
-@import "~@fortawesome/fontawesome-free/scss/regular.scss";
-@import "~@fortawesome/fontawesome-free/scss/brands.scss";
-@import "~angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss";
-@import "~angular-bootstrap-md/assets/scss/mdb.scss";
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 // regular style toast
-@import '~ngx-toastr/toastr';
+@import "../node_modules/ngx-toastr/toastr";
 
-ul.stepper li a .circle{
-    line-height: 1.9rem;
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+
+
+ul.stepper li a .circle {
+  line-height: 1.9rem;
 }
-.filepond--drop-label label{
-    cursor:pointer;
+.filepond--drop-label label {
+  cursor: pointer;
 }
 
-.filepond--root{
-    margin-bottom: 0;
+.filepond--root {
+  margin-bottom: 0;
 }
 p {
-    margin-top: 0;
-    margin-bottom: 0rem;
+  margin-top: 0;
+  margin-bottom: 0rem;
 }

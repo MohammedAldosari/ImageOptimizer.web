@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./file-download.component.scss'],
 })
 export class FileDownloadComponent implements OnInit {
-  @Input() fileNmae: string;
+  @Input() fileNmae: string = '';
 
   @Output() onFinish: EventEmitter<void> = new EventEmitter();
   isLoading = false;

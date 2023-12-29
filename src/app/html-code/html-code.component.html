@@ -1,15 +1,42 @@
 <div>
-    <h5>Responsive Images: Improving performance by letting the browser do the work</h5>
-    <h6>Use the html code below on your html</h6>
-    <button *ngIf="!this.copiedStatus" class="btn btn-primary mt-2 mb-3 mx-1" (click)="copyBtnOnClick()" ngxClipboard
-        [cbContent]="htmlCode"><i class="far fa-copy mx-2 faa-horizontal faa-slow animated"></i>Copy to
-        clipboard</button>
-    <button *ngIf="this.copiedStatus" class="btn btn-success mt-2 mb-3 mx-1"><i
-            class="fas fa-check mx-2 faa-tada animated"></i>Copied</button>
-    <div class="step-content grey lighten-3">
+  <h5>
+    Responsive Images: Improving performance by letting the browser do the work
+  </h5>
+  <h6>Use the html code below on your html</h6>
+  <button
+    *ngIf="!this.copiedStatus"
+    class="btn btn-primary mt-2 mb-3 mx-1"
+    (click)="copyBtnOnClick()"
+  >
+    <i class="fa fa-copy mx-2 faa-horizontal faa-slow animated"></i>Copy to
+    clipboard
+  </button>
+  <button *ngIf="this.copiedStatus" class="btn btn-success mt-2 mb-3 mx-1">
+    <i class="fa fa-check mx-2 faa-tada animated"></i>Copied
+  </button>
+  <div class="step-content grey lighten-3">
+    <div
+      ace-editor
+      [text]="htmlCode"
+      #Target
+      [readOnly]="true"
+      [options]="options"
+      mode="html"
+      theme="eclipse"
+      class="w-100"
+      style="min-height: 250px; width: 100%; overflow: auto"
+    ></div>
 
-        <div ace-editor [text]="htmlCode" #Target [readOnly]="true" [options]="options" mode="html" theme="eclipse"
-            class="w-100" style="min-height: 250px; width:100%; overflow: auto;">
-        </div>
-    </div>
+    <!-- <md-editor
+      name="Content"
+      [(ngModel)]="htmlCode"
+      [height]="'200px'"
+      mode="preview"
+      [options]="options"
+      required
+      maxlength="500"
+    >
+      <slot custom-btns></slot>
+    </md-editor> -->
+  </div>
 </div>

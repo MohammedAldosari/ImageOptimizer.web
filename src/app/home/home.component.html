@@ -1,73 +1,100 @@
 <!-- Vertical Steppers -->
 <div class="row mt-1">
-    <div class="col-md-12">
-        <img src="assets/svg/undraw_posting_photo.svg" class="image mb-5">
-        <h5><i class="far fa-images mx-2 text-primary"></i><strong class="text-primary">ImageOptimizer</strong> offers a
-            full range
-            of professional features to
-            optimize your
-            images for today’s web, all packed into a remarkably clean
-            and simple interface.</h5>
+  <div class="col-md-12">
+    <img src="assets/svg/undraw_posting_photo.svg" class="image mb-5" />
+    <h5>
+      <i class="far fa-images mx-2 text-primary"></i
+      ><strong class="text-primary">ImageOptimizer</strong> offers a full range
+      of professional features to optimize your images for today’s web, all
+      packed into a remarkably clean and simple interface.
+    </h5>
 
-        <!-- Stepers Wrapper -->
-        <ul class="stepper stepper-vertical m-0">
-
-            <!-- First Step -->
-            <li [class.active]="activeStep === 1">
-                <a href="#!">
-                    <span class="circle" *ngIf="this.activeStep<=1">1</span>
-                    <span class="circle complete" *ngIf="this.activeStep > 1"><i
-                            class="fas fa-check faa-tada animated run-once"></i></span>
-                    <span class="label">Upload Image</span>
-                </a>
-
-                <!-- Step Content -->
-                <div class="w-100 box" *ngIf="this.activeStep===1">
-                    <app-file-upload (onFinish)="step1Finish($event)"></app-file-upload>
-                </div>
-            </li>
-
-            <!-- Second Step -->
-            <li [class.active]="activeStep === 2">
-
-                <!--Section Title -->
-                <a href="#!">
-                    <span class="circle" *ngIf="this.activeStep<=2">2</span>
-                    <span class="circle complete" *ngIf="this.activeStep > 2"><i
-                            class="fas fa-check faa-tada animated run-once"></i></span>
-                    <span class="label">Download Optimized Images</span>
-                </a>
-
-                <!-- Step Content -->
-                <div class="w-100 box " *ngIf="this.activeStep===2">
-                    <app-file-download (onFinish)="next()" [fileNmae]="appResponseDto.data.fileName">
-                    </app-file-download>
-                </div>
-            </li>
-
-            <!-- Third Step -->
-            <li [class.active]="activeStep === 3">
-                <a href="#!">
-                    <span class="circle" *ngIf="this.activeStep <= 3">3</span>
-                    <span class="circle complete" *ngIf="this.activeStep > 3"><i
-                            class="fas fa-check faa-tada animated run-once"></i></span>
-                    <span class="label">Html Code</span>
-                </a>
-                <!-- Step Content -->
-                <div class="w-100 box " *ngIf="this.activeStep>=3">
-                    <app-html-code (onFinish)="next()" [htmlCode]="appResponseDto.data.htmlCode"></app-html-code>
-                </div>
-            </li>
-
-
-        </ul>
-        <!-- /.Stepers Wrapper -->
-
+    <div class="card">
+      <p-steps
+        [model]="items"
+        [activeIndex]="activeStep"
+        [readonly]="true"
+      ></p-steps>
     </div>
-</div>
-<!-- <div class="row justify-content-between">
+
+    <div class="w-100 box" *ngIf="this.activeStep === 0">
+      <app-file-upload (onFinish)="step1Finish($event)"></app-file-upload>
+    </div>
+
+    <div class="w-100 box" *ngIf="this.activeStep === 1">
+      <app-file-download
+        (onFinish)="next()"
+        [fileNmae]="appResponseDto.data.fileName"
+      >
+      </app-file-download>
+    </div>
+
+    <div class="w-100 box" *ngIf="this.activeStep >= 2">
+      <app-html-code (onFinish)="next()"></app-html-code>
+      <!-- Stepers Wrapper -->
+      <!-- <ul class="stepper stepper-vertical m-0"> -->
+      <!-- First Step -->
+      <!-- <li [class.active]="activeStep === 0">
+        <a href="#!">
+          <span class="circle" *ngIf="this.activeStep <= 1">1</span>
+          <span class="circle complete" *ngIf="this.activeStep > 1"
+            ><i class="fas fa-check faa-tada animated run-once"></i
+          ></span>
+          <span class="label">Upload Image</span>
+        </a> -->
+
+      <!-- Step Content -->
+      <!-- <div class="w-100 box" *ngIf="this.activeStep === 1">
+          <app-file-upload (onFinish)="step1Finish($event)"></app-file-upload>
+        </div>
+      </li> -->
+
+      <!-- Second Step -->
+      <!-- <li [class.active]="activeStep === 2"> -->
+      <!--Section Title -->
+      <!-- <a href="#!">
+          <span class="circle" *ngIf="this.activeStep <= 2">2</span>
+          <span class="circle complete" *ngIf="this.activeStep > 2"
+            ><i class="fas fa-check faa-tada animated run-once"></i
+          ></span>
+          <span class="label">Download Optimized Images</span>
+        </a> -->
+
+      <!-- Step Content -->
+      <!-- <div class="w-100 box" *ngIf="this.activeStep === 2">
+          <app-file-download
+            (onFinish)="next()"
+            [fileNmae]="appResponseDto.data.fileName"
+          >
+          </app-file-download>
+        </div>
+      </li> -->
+
+      <!-- Third Step -->
+      <!-- <li [class.active]="activeStep === 3">
+        <a href="#!">
+          <span class="circle" *ngIf="this.activeStep <= 3">3</span>
+          <span class="circle complete" *ngIf="this.activeStep > 3"
+            ><i class="fas fa-check faa-tada animated run-once"></i
+          ></span>
+          <span class="label">Html Code</span>
+        </a> -->
+      <!-- Step Content -->
+      <!-- <div class="w-100 box" *ngIf="this.activeStep >= 3">
+          <app-html-code
+            (onFinish)="next()"
+            [htmlCode]="appResponseDto.data.htmlCode"
+          ></app-html-code>
+        </div>
+      </li>
+    </ul> -->
+      <!-- /.Stepers Wrapper -->
+    </div>
+  </div>
+  <!-- <div class="row justify-content-between">
     <button class="btn btn-danger mx-1" (click)="back()" [disabled]="this.activeStep===1">back</button>
     <button class="btn btn-primary mx-1" (click)="next()"
         [disabled]="this.activeStep===this.numberOfSteps">Next</button>
 </div> -->
-<!-- /.Vertical Steppers -->
+  <!-- /.Vertical Steppers -->
+</div>

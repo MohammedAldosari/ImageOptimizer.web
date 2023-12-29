@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppResponseDto } from '../interfaces';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,25 @@ import { AppResponseDto } from '../interfaces';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  numberOfSteps = 3;
-  activeStep = 1;
+  activeStep = 2;
+  items: MenuItem[] | undefined;
 
   appResponseDto: AppResponseDto;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.items = [
+      {
+        label: 'Upload Image',
+      },
+      {
+        label: 'Download Optimized Images',
+      },
+      {
+        label: 'Html Code',
+      },
+    ];
+  }
 
   step1Finish(_appResponseDto: AppResponseDto) {
     this.appResponseDto = _appResponseDto;
