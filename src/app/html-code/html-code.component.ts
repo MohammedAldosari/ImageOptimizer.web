@@ -8,23 +8,7 @@ import { ClipboardService } from 'ngx-clipboard';
 })
 export class HtmlCodeComponent implements OnInit {
   copiedStatus: boolean = false;
-  @Input() htmlCode: string = `
-     <picture>
-        <!-- load webp in different sizes if browser supports it -->
-        <source media="(max-width: 480px)" srcset="Screenshot_20231212_152646_Absher-480.webp" type="image/webp">
-        <source media="(max-width: 767px)" srcset="Screenshot_20231212_152646_Absher-767.webp" type="image/webp">
-        <source media="(min-width: 768px)" srcset="Screenshot_20231212_152646_Absher-full.webp" type="image/webp">
-
-        <!-- load jpg in different sizes if browser doesn't support webp -->
-        <source media="(max-width: 480px)" srcset="Screenshot_20231212_152646_Absher-480.jpg" type="image/jpeg">
-        <source media="(max-width: 767px)" srcset="Screenshot_20231212_152646_Absher-767.jpg" type="image/jpeg">
-        <source media="(min-width: 768px)" srcset="Screenshot_20231212_152646_Absher-full.jpg" type="image/jpeg">
-
-        <!--  fallback in different sizes, as well as regular src. -->
-        <img srcset="Screenshot_20231212_152646_Absher-480.jpg 480w, Screenshot_20231212_152646_Absher-767.jpg 767w" sizes="(max-width: 480px) 480px,
-            (max-width: 767px) 768px" src="Screenshot_20231212_152646_Absher-full.jpg" alt="image description">
-
-     </picture>`;
+  @Input() htmlCode: string = ``;
 
   @Output() onFinish: EventEmitter<void> = new EventEmitter();
 

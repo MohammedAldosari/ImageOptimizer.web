@@ -9,8 +9,6 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 
-
-
 ul.stepper li a .circle {
   line-height: 1.9rem;
 }
@@ -24,4 +22,18 @@ ul.stepper li a .circle {
 p {
   margin-top: 0;
   margin-bottom: 0rem;
+}
+
+.p-menuitem-link {
+  text-decoration: none;
+}
+
+.p-disabled .p-menuitem-link .p-steps-number {
+  background: #f1f0ef;
+}
+ol,
+ul,
+dl {
+  margin: 0;
+  padding: 0;
 }

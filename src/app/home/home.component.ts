@@ -8,7 +8,7 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  activeStep = 2;
+  activeStep = 0;
   items: MenuItem[] | undefined;
 
   appResponseDto: AppResponseDto;

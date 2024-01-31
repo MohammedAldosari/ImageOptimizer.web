@@ -9,7 +9,7 @@
       packed into a remarkably clean and simple interface.
     </h5>
 
-    <div class="card">
+    <div class="card p-5">
       <p-steps
         [model]="items"
         [activeIndex]="activeStep"
@@ -30,7 +30,10 @@
     </div>
 
     <div class="w-100 box" *ngIf="this.activeStep >= 2">
-      <app-html-code (onFinish)="next()"></app-html-code>
+      <app-html-code
+        [htmlCode]="appResponseDto.data.htmlCode"
+        (onFinish)="next()"
+      ></app-html-code>
       <!-- Stepers Wrapper -->
       <!-- <ul class="stepper stepper-vertical m-0"> -->
       <!-- First Step -->
